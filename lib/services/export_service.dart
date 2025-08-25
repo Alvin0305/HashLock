@@ -23,10 +23,16 @@ class ExportService {
 
     if (credentials.isNotEmpty) {
       rows.add(["---- CREDENTIALS ----"]);
-      rows.add(["Category", "Service Name", "Field Name", "Field Value"]);
+      rows.add(["ID", "Category", "Service Name", "Field Name", "Field Value"]);
       for (final cred in credentials) {
         for (final entry in cred.fields) {
-          rows.add([cred.category, cred.serviceName, entry.field, entry.value]);
+          rows.add([
+            cred.id,
+            cred.category,
+            cred.serviceName,
+            entry.field,
+            entry.value,
+          ]);
         }
       }
       rows.add([]);
